@@ -1,0 +1,5 @@
+{
+	"deno.enable": true
+	// Если вы хотите использовать нестабильные функции Deno
+	// "deno.unstable": true
+}

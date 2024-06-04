@@ -1,4 +1,5 @@
 import { copyAndModifyFiles } from './functions/copyAndModifyFiles.ts';
+import { logError } from './utils/errorHandling.ts';
 
 // Функция для запроса булевого значения у пользователя
 // function askBoolean(question: string): boolean | null {
@@ -18,4 +19,4 @@ const modifiedFolder: string = 'modifiedFolder';
 // Запуск процесса копирования и модификации файлов изображений
 copyAndModifyFiles(originalFolder, modifiedFolder)
 	.then(() => console.log('Файлы успешно скопированы и изменены'))
-	.catch((error) => console.error('Произошла ошибка:', error));
+	.catch((error) => logError(error));

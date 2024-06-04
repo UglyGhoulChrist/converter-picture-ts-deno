@@ -9,8 +9,8 @@ export async function copyAndModifyFiles(
 ): Promise<void> {
 	await ensureDir(destDir);
 	for await (const dirEntry of walkDir(srcDir)) {
-		const srcPath = join(srcDir, dirEntry.name);
-		const destPath = join(destDir, dirEntry.name);
+		const srcPath: string = join(srcDir, dirEntry.name);
+		const destPath: string = join(destDir, dirEntry.name);
 		if (dirEntry.isDirectory) {
 			await copyAndModifyFiles(srcPath, destPath);
 		} else if (dirEntry.isFile) {

@@ -29,12 +29,11 @@ export async function modifyFileContent(
 		const cropX: number = (width - cropSize) / 2;
 		// Вычисляем начальную точку обрезки по оси Y
 		const cropY: number = (height - cropSize) / 2;
-
 		// Конвертируем и обрабатываем изображение в формат .webp с заданными параметрами
 		// Опции: -q 80 (качество 80%), -crop (обрезка), -resize 900 900 (изменение размера до 900x900)
 		await convert(
 			srcPath,
-			outputFilePath,
+			outputFilePath.replace(/.[^.]+$/, '.webp'),
 			`-q 80 -crop ${cropX} ${cropY} ${cropSize} ${cropSize} -resize 900 900`,
 			// '-v',
 		);
